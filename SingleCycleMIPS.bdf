@@ -1,0 +1,505 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 32 144 200 160)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "inclock" (rect 5 0 39 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 888 168 1056 184)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "inclock4" (rect 5 0 45 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 888 200 1056 216)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "we" (rect 5 0 17 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 888 184 1056 200)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "outclock" (rect 5 0 46 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(symbol
+	(rect 248 112 360 208)
+	(text "LPM_ROM" (rect 25 0 100 16)(font "Arial" (font_size 10)))
+	(text "inst" (rect 3 85 23 99)(font "Arial" (font_size 8)))
+	(port
+		(pt 0 24)
+		(input)
+		(text "address[LPM_WIDTHAD-1..0]" (rect 20 17 186 31)(font "Arial" (font_size 8)))
+		(text "address[]" (rect 20 17 74 31)(font "Arial" (font_size 8)))
+		(line (pt 0 24)(pt 16 24)(line_width 3))
+	)
+	(port
+		(pt 0 40)
+		(input)
+		(text "inclock" (rect 20 33 58 47)(font "Arial" (font_size 8)))
+		(text "inclock" (rect 20 33 58 47)(font "Arial" (font_size 8)))
+		(line (pt 0 40)(pt 16 40))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "outclock" (rect 20 49 67 63)(font "Arial" (font_size 8)))
+		(text "outclock" (rect 20 49 67 63)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
+		(pt 0 72)
+		(input)
+		(text "memenab" (rect 20 65 74 79)(font "Arial" (font_size 8)))
+		(text "memenab" (rect 20 65 74 79)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 16 72))
+	)
+	(port
+		(pt 112 48)
+		(output)
+		(text "q[LPM_WIDTH-1..0]" (rect 80 41 188 55)(font "Arial" (font_size 8)))
+		(text "q[]" (rect 80 41 94 55)(font "Arial" (font_size 8)))
+		(line (pt 96 48)(pt 112 48)(line_width 3))
+	)
+	(parameter
+		"LPM_ADDRESS_CONTROL"
+		"\"REGISTERED\""
+		"Should the address and control ports be registered?"
+		"\"REGISTERED\"" "\"UNREGISTERED\"" 
+		(type "PARAMETER_UNKNOWN")	)
+	(parameter
+		"LPM_FILE"
+		"memFile"
+		"File containing initial contents of memory array"
+		(type "PARAMETER_UNKNOWN")	)
+	(parameter
+		"LPM_NUMWORDS"
+		"256"
+		"Number of memory words, default is 2^LPM_WIDTHAD"
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LPM_OUTDATA"
+		"\"UNREGISTERED\""
+		"Should the output data be registered?"
+		"\"REGISTERED\"" "\"UNREGISTERED\"" 
+		(type "PARAMETER_UNKNOWN")	)
+	(parameter
+		"LPM_WIDTH"
+		"32"
+		"Data width in bits, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LPM_WIDTHAD"
+		"8"
+		"Number of address lines, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" 
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(line (pt 16 16)(pt 96 16))
+		(line (pt 16 80)(pt 96 80))
+		(line (pt 96 80)(pt 96 16))
+		(line (pt 16 80)(pt 16 16))
+	)
+	(annotation_block (parameter)(rect 360 0 692 98))
+)
+(symbol
+	(rect 200 176 232 192)
+	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 5 26 17)(font "Arial" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
+	(rect 1056 120 1176 232)
+	(text "LPM_RAM_DQ" (rect 16 0 121 16)(font "Arial" (font_size 10)))
+	(text "inst3" (rect 3 101 26 113)(font "Arial" ))
+	(port
+		(pt 0 56)
+		(input)
+		(text "inclock" (rect 20 49 58 63)(font "Arial" (font_size 8)))
+		(text "inclock" (rect 20 49 58 63)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
+		(pt 0 24)
+		(input)
+		(text "data[LPM_WIDTH-1..0]" (rect 20 17 146 31)(font "Arial" (font_size 8)))
+		(text "data[]" (rect 20 17 51 31)(font "Arial" (font_size 8)))
+		(line (pt 0 24)(pt 16 24)(line_width 3))
+	)
+	(port
+		(pt 0 40)
+		(input)
+		(text "address[LPM_WIDTHAD-1..0]" (rect 20 33 186 47)(font "Arial" (font_size 8)))
+		(text "address[]" (rect 20 33 74 47)(font "Arial" (font_size 8)))
+		(line (pt 0 40)(pt 16 40)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "we" (rect 20 81 38 95)(font "Arial" (font_size 8)))
+		(text "we" (rect 20 81 38 95)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 16 88))
+	)
+	(port
+		(pt 0 72)
+		(input)
+		(text "outclock" (rect 20 65 67 79)(font "Arial" (font_size 8)))
+		(text "outclock" (rect 20 65 67 79)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 16 72))
+	)
+	(port
+		(pt 120 56)
+		(output)
+		(text "q[LPM_WIDTH-1..0]" (rect 88 49 196 63)(font "Arial" (font_size 8)))
+		(text "q[]" (rect 88 49 102 63)(font "Arial" (font_size 8)))
+		(line (pt 104 56)(pt 120 56)(line_width 3))
+	)
+	(parameter
+		"LPM_ADDRESS_CONTROL"
+		"\"REGISTERED\""
+		"Should the address and control ports be registered?"
+		"\"REGISTERED\"" "\"UNREGISTERED\"" 
+		(type "PARAMETER_UNKNOWN")	)
+	(parameter
+		"LPM_FILE"
+		"instructionFile.mif"
+		"File containing initial contents of memory array"
+		(type "PARAMETER_UNKNOWN")	)
+	(parameter
+		"LPM_INDATA"
+		"\"REGISTERED\""
+		"Should the write data be registered?"
+		"\"REGISTERED\"" "\"UNREGISTERED\"" 
+		(type "PARAMETER_UNKNOWN")	)
+	(parameter
+		"LPM_NUMWORDS"
+		"256"
+		"Number of memory words, default is 2^LPM_WIDTHAD"
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LPM_OUTDATA"
+		"\"UNREGISTERED\""
+		"Should the output data be registered?"
+		"\"REGISTERED\"" "\"UNREGISTERED\"" 
+		(type "PARAMETER_UNKNOWN")	)
+	(parameter
+		"LPM_WIDTH"
+		"8"
+		"Data width in bits, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LPM_WIDTHAD"
+		"8"
+		"Number of address lines, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" 
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(line (pt 16 16)(pt 104 16))
+		(line (pt 16 96)(pt 104 96))
+		(line (pt 104 96)(pt 104 16))
+		(line (pt 16 96)(pt 16 16))
+	)
+	(annotation_block (parameter)(rect 1176 8 1520 120))
+)
+(symbol
+	(rect 584 136 832 344)
+	(text "SingleCycleProcessor" (rect 5 0 113 12)(font "Arial" ))
+	(text "inst2" (rect 8 192 31 204)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "valueSelect[2..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "valueSelect[2..0]" (rect 21 59 104 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Instruction[31..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "Instruction[31..0]" (rect 21 75 104 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "ReadData[7..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "ReadData[7..0]" (rect 21 91 96 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "WriteData[7..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "WriteData[7..0]" (rect 164 27 227 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "ReadAddr[7..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "ReadAddr[7..0]" (rect 165 43 227 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48)(line_width 3))
+	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "WriteAddress[7..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "WriteAddress[7..0]" (rect 150 59 227 71)(font "Arial" ))
+		(line (pt 248 64)(pt 232 64)(line_width 3))
+	)
+	(port
+		(pt 248 80)
+		(output)
+		(text "MUXOut[7..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "MUXOut[7..0]" (rect 172 75 227 87)(font "Arial" ))
+		(line (pt 248 80)(pt 232 80)(line_width 3))
+	)
+	(port
+		(pt 248 96)
+		(output)
+		(text "InstructionOut[31..0]" (rect 0 0 101 12)(font "Arial" ))
+		(text "InstructionOut[31..0]" (rect 142 91 227 103)(font "Arial" ))
+		(line (pt 248 96)(pt 232 96)(line_width 3))
+	)
+	(port
+		(pt 248 112)
+		(output)
+		(text "ReadAddress[31..0]" (rect 0 0 97 12)(font "Arial" ))
+		(text "ReadAddress[31..0]" (rect 145 107 227 119)(font "Arial" ))
+		(line (pt 248 112)(pt 232 112)(line_width 3))
+	)
+	(port
+		(pt 248 128)
+		(output)
+		(text "branchOut" (rect 0 0 50 12)(font "Arial" ))
+		(text "branchOut" (rect 185 123 227 135)(font "Arial" ))
+		(line (pt 248 128)(pt 232 128))
+	)
+	(port
+		(pt 248 144)
+		(output)
+		(text "zeroOut" (rect 0 0 37 12)(font "Arial" ))
+		(text "zeroOut" (rect 196 139 227 151)(font "Arial" ))
+		(line (pt 248 144)(pt 232 144))
+	)
+	(port
+		(pt 248 160)
+		(output)
+		(text "memWriteOut" (rect 0 0 68 12)(font "Arial" ))
+		(text "memWriteOut" (rect 170 155 227 167)(font "Arial" ))
+		(line (pt 248 160)(pt 232 160))
+	)
+	(port
+		(pt 248 176)
+		(output)
+		(text "regWriteOut" (rect 0 0 59 12)(font "Arial" ))
+		(text "regWriteOut" (rect 178 171 227 183)(font "Arial" ))
+		(line (pt 248 176)(pt 232 176))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 192))
+	)
+)
+(connector
+	(pt 248 184)
+	(pt 216 184)
+)
+(connector
+	(pt 216 192)
+	(pt 216 184)
+)
+(connector
+	(pt 248 152)
+	(pt 200 152)
+)
+(connector
+	(pt 240 136)
+	(pt 240 128)
+	(bus)
+)
+(connector
+	(pt 248 136)
+	(pt 240 136)
+	(bus)
+)
+(connector
+	(pt 360 160)
+	(pt 504 160)
+	(bus)
+)
+(connector
+	(pt 504 216)
+	(pt 504 160)
+	(bus)
+)
+(connector
+	(pt 504 216)
+	(pt 584 216)
+	(bus)
+)
+(connector
+	(pt 832 184)
+	(pt 928 184)
+	(bus)
+)
+(connector
+	(pt 928 448)
+	(pt 928 184)
+	(bus)
+)
+(connector
+	(pt 96 448)
+	(pt 928 448)
+	(bus)
+)
+(connector
+	(pt 96 128)
+	(pt 96 448)
+	(bus)
+)
+(connector
+	(pt 96 128)
+	(pt 240 128)
+	(bus)
+)
+(connector
+	(pt 1176 176)
+	(pt 1304 176)
+	(bus)
+)
+(connector
+	(pt 1304 392)
+	(pt 1304 176)
+	(bus)
+)
+(connector
+	(pt 1304 392)
+	(pt 544 392)
+	(bus)
+)
+(connector
+	(pt 544 392)
+	(pt 544 232)
+	(bus)
+)
+(connector
+	(pt 544 232)
+	(pt 584 232)
+	(bus)
+)
+(connector
+	(pt 832 168)
+	(pt 872 168)
+	(bus)
+)
+(connector
+	(pt 872 144)
+	(pt 872 168)
+	(bus)
+)
+(connector
+	(pt 872 144)
+	(pt 1056 144)
+	(bus)
+)
+(connector
+	(pt 832 200)
+	(pt 888 200)
+	(bus)
+)
+(connector
+	(pt 888 160)
+	(pt 888 200)
+	(bus)
+)
+(connector
+	(pt 888 160)
+	(pt 1056 160)
+	(bus)
+)
