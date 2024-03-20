@@ -11,7 +11,6 @@ ENTITY SingleCycleProcessor IS
 		ReadAddr,WriteAddress : OUT STD_LOGIC_VECTOR (7 downto 0);
 		MUXOut: OUT STD_LOGIC_VECTOR(7 downto 0);
 		InstructionOut: OUT STD_LOGIC_VECTOR(31 downto 0);
-		ReadAddress: OUT STD_LOGIC_VECTOR (31 downto 0);
 		branchOut: OUT STD_LOGIC;
 		zeroOut: OUT STD_LOGIC;
 		memWriteOut: OUT STD_LOGIC;
@@ -276,5 +275,7 @@ BEGIN
 	ZeroOut <= zero;
 	memWriteOut <= memWrite;
 	RegWriteOut <= regWrite;
+	
+	InstructionOut <= instruction;
 	
 END struct;
